@@ -1,0 +1,208 @@
+div, img, section{display: flex; background: inherit;}
+.A{
+  display: inline-flex;
+  position: relative;
+  background: inherit;
+}
+body {
+  flex-wrap: wrap;
+}
+.guide, .header{
+  width: 100vw;
+  display: block;
+}
+.header{
+  text-align:center;
+}
+td{
+  max-height: 76px;
+}
+.hiddenday >* {
+    display: none;
+}
+.overflowtext{
+  position: absolute;
+  left: 100%;
+  background: inherit;
+  color: black;
+  width: max-content;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.A.batch:focus-within .overflowtext{
+  pointer-events: all;
+}
+
+//.CA_cell:focus:hover{ display: none !important; }
+.notification {
+  padding-left: 48px;
+  width: 25px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  
+  //background-repeat: no-repeat;
+  background-clip: content-box;
+  background-size: contain;
+  background-image:url(https://cdn-icons-png.flaticon.com/128/1827/1827422.png);
+  pointer-events: all;
+  
+&.on{
+  background-image: url(https://cdn-icons-png.flaticon.com/128/1157/1157000.png);
+}
+}
+
+
+img {
+  width: 50px;
+  height: 50px;
+  background-color: gray;
+  
+}
+table {
+  background: #aaa;
+}
+.CA_cell{
+  position: relative;
+  background-color: #aaa;
+  border: 3px solid #555;
+  // width: 0; // calc((52 + 2) * 4px);
+  width: 220px;
+}
+
+.ca_cell_inner{
+  display: flex;
+}
+.icon{
+  flex-flow: column;
+}
+.icon .iconlabel {
+  display: inline-flex;
+  margin: auto;
+}
+.overflowtext{
+  display: none;
+}
+.A:hover>.overflowtext, .A:focus-within>.overflowtext{
+  display: flex;
+  z-index: 2;
+}
+.CA_cell:hover, .CA_cell:focus-within{
+  z-index: 3;
+  border: 3px solid transparent;
+}
+.CA_cell:hover>.timer, .CA_cell:focus-within>.overflowtext{
+    position: absolute;
+    display: flex;
+    z-index: 2;
+    top: -31px;
+    left: 0;
+    border-top: 3px solid #555;
+    left: -3px;
+    width: calc(100% + 6px);
+    height: 24px;
+    border-bottom: 1px solid transparent; // #555;
+    border-top: 3px solid #555;
+}
+
+.timer>div {
+    margin: auto;
+}
+
+.overflowinner{
+  flex-flow: column;
+  background: inherit;
+  height: max-content;
+}
+.subactions{
+  max-width: 380px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.subactions .A{
+  margin: 5px;
+}
+
+.overflowinner h3{
+  display: inline;
+  margin: 10px auto;
+}
+
+body {
+  display: flex;
+ 
+}
+
+.sidebar{
+    flex-wrap: wrap;
+    flex-grow: 1;
+    min-width: 160px;
+    max-width: 320px;
+    overflow-x: hidden;
+}
+table {
+    flex-shrink: 0;
+}
+.sidebar .A:hover .overflowtext, .sidebar .A:focus-within .overflowtext {
+  display: none;
+}
+.filter {
+    margin: 20px 15px;
+    display: inline-flex;
+}
+
+
+table .A[data-selected="0"] {
+  display: none;
+}
+.sidebar .A[data-selected="0"] {
+  opacity: 0.5;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    zoom: 0.2;
+  }
+}
+
+
+.preparing{
+  outline-top: 5px solid red;
+}
+
+.preparing::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 10px;
+    right: 9px;
+    outline: 10px solid red;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.active_now::after{
+    content: '';
+    position: absolute;
+    outline: 10px solid red;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+.hiddenday{
+  width: 0px;
+  max-width: 25px;
+  overflow: hidden;
+}
+.hiddenday > *{
+  opacity: 0;
+}
+
+th+th {
+  // gives width to whole column through header
+    width: calc((52 + 2) * 4px + 2px);
+}
